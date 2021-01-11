@@ -1,0 +1,40 @@
+<%= render "shared/header" %>
+<h1>詳細ページ</h1>
+<div>
+<%=@movie.title %>
+</div>
+<div>
+<%#=@theater.name %>
+</div>
+<%# @schedules.each do |schedule| %>
+  <%#=@schedule.start_time%>
+  <%#=@schedule.end_time%>
+  <%#=@schedule.end_time%>
+<%# end %>
+<div style="position: relative; padding-bottom: 56.25%;">
+  <iframe 
+    style="position: absolute; top: 0; left: 0; width: 50%; height: 50%;" 
+    src="https://www.youtube.com/embed/<%= @movie.youtube_url %>"
+    frameborder="0" 
+    allow="autoplay; 
+    encrypted-media" 
+    allowfullscreen></iframe>
+</div>
+
+<div class="row">
+    <% if user_signed_in? %>
+        <div class="comment-create">
+            <h3 class="text-left">レビューを投稿する</h3>
+            <%= render partial: 'comments/form', locals: { comment: @comment, movie: @movie } %>
+        </div>
+    <% end %>
+    <hr>
+    <ul>
+        <li class="comment-create">
+            <h3 class="text-left title">レビュー</h3>
+        </li>
+        <li id="comments_area">
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </li>
+    </ul>
+</div>

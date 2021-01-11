@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+<h1>review index</h1>
+<table>
+  <thead>
+    <tr>
+        <th scope="col">映画タイトル</th>
+        <th scope="col">平均レーティング</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+    <tr>
+        <td data-label="映画タイトル" class="txt"><%=review.movie.title %> </td>
+        <td data-label="平均レーティング" class="txt"><%=review.avg_rating %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>   
+
+<%# @reviews.each do |review| %>
+<%#= "#{review.movie.title} : #{review.avg_rating}" %>
+<%# end %>

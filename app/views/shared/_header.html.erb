@@ -1,0 +1,23 @@
+<header class='top-page-header'>
+
+  <div class='session'>
+    <ul class='session-lists'>
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %> 
+    </ul>
+  </div>
+
+  <div class='menu'>
+    <ul class='menu-lists'>
+      <li><%= link_to '評価ランキング', reviews_path, class: "ranking-list" %></li>
+      <li><%= link_to '上映作品一覧', movies_path, class: "movie-list" %></li>
+      <li><%= link_to '映画館一覧', theaters_path, class: "theater-list" %></li>
+    </ul>
+  </div>
+
+</header>
