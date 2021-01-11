@@ -1,0 +1,5 @@
+<!-- コメント入力フォーム ------------------------------------------------------------>
+<%= form_with(model: [movie, comment], url: movie_comments_path(@movie) ) do |f| %>
+    <%= f.text_area :content, class: "input-mysize" %>
+    <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
+<% end %>
