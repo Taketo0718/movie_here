@@ -1,14 +1,34 @@
-.title-contents {
-  width: 100vw;
-  background-image: image-url('cinema.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+.search-icon {
+  width: 100%;
+}
+.search-bar-contents {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9); 
+  justify-content: space-between;
+  align-items: center;
+}
+
+.furima-icon {
+  width: 10vw;
+  margin-right: 10vw;
+}
+
+.search-form {
+  width: 65vw;
+  height: 5vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.search-form>.input-box {
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+}
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #3ccace;
+  padding: 8px;
 }
