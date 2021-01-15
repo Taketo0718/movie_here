@@ -12,12 +12,24 @@
     </ul>
   </div>
 
-  <div class='menu'>
-    <ul class='menu-lists'>
+  <nav id='navi'>
+    <ul class='navi-lists'>
+      <li></li>
       <li><%= link_to '評価ランキング', reviews_path, class: "ranking-list" %></li>
       <li><%= link_to '上映作品一覧', movies_path, class: "movie-list" %></li>
       <li><%= link_to '映画館一覧', theaters_path, class: "theater-list" %></li>
     </ul>
-  </div>
+  </nav>
 
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      映画即決！
+    </h2>
+    <p class='service-explain'>
+      MovieNow!は今すぐ観にいく映画館を
+    </p>
+    <p class='service-explain'>
+      決めるためのアプリです
+    </p>
+  </div>
 </header>
