@@ -1,12 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: :destroy
+  def index
 
+  end
   def create
     @movie = Movie.find(params[:movie_id])
     @comment = @movie.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    render :index
+    redirect_to "/movies/#{@comment.movie.id}"
   end
 
   def edit; end
