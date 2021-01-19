@@ -1,5 +1,21 @@
-<%= render "shared/header" %>
 <h1>theater index</h1>
-<% @theaters.each do |theater| %>
-<%= "#{theater.name}:#{theater.longitude}:#{theater.latitude}" %><br>
-<% end %>
+<div class="container">
+<table class="table">
+  <tr class="th">
+    <th>映画館名</th>
+    <th>住所</th>
+    <th>電話番号</th>
+    <th>緯度</th>
+    <th>経度</th>
+  </tr>
+  <% @theaters.each do |theater| %>
+  <tr>
+    <td><%= link_to theater.name, theater_path(theater) %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+    <td><%= theater.longitude %></td>
+    <td><%= theater.latitude %> </td>
+  </tr>
+   <% end %>
+</table>
+</div>

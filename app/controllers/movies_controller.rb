@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+  def index
+    @movies = Movie.all
+  end
   def show
     @movie = Movie.find(movie_params[:id])
     @comment = Comment.new
