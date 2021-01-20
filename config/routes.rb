@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "movies#index"
+  root to: "home#index"
+  resources :home, only: [:index]
   resources :schedules, only: [:index, :show]
   resources :reviews, only: [:index, :show]
   resources :theaters, only: [:index, :show]

@@ -1,19 +1,19 @@
-<%= render "shared/header" %>
 <h1>映画スケジュール</h1>
-<table>
-<tr>
-<td>映画館名</td>
-<td>映画タイトル</td>
-<td>開始時間</td>
-<td>終了時間</td>
-</tr>
-<% @schedules.each do |schedule| %>
-<tr>
-<td> <%= schedule.theater.name %> </td> 
-<td> <%= schedule.movie.title %> </td> 
-<td> <%= schedule.start_time %> </td> 
-<td> <%= schedule.end_time %> </td> 
-
-</tr>
-<% end %>
+<div class="container">
+<table class="table">
+  <tr class="th">
+    <th>映画館名</th>
+    <th>映画タイトル</th>
+    <th>開始時間</th>
+    <th>終了時間</th>
+  </tr>
+ <% @schedules.each do |schedule| %>
+  <tr>
+  <td> <%= schedule.theater.name %> </td> 
+  <td> <%= schedule.movie.title %> </td> 
+  <td> <%= schedule.start_time %> </td> 
+  <td> <%= schedule.end_time %> </td> 
+  </tr>
+  <% end %>
 </table>
+</div>

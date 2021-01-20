@@ -1,35 +1,29 @@
-<header class='top-page-header'>
-
-  <div class='session'>
-    <ul class='session-lists'>
-      <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %> 
-    </ul>
+   <div class="hero-head">
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+            <%= link_to '管理用', reviews_path, class:"navbar-item is-active" %>
+            <%= link_to 'マイページ', user_session_path, class:"navbar-item" %>
+            <%= link_to 'ログイン', user_session_path, class:"navbar-item" %>
+            <span class="navbar-item">
+              <%= link_to 'ログアウト', user_session_path, class:"button is-success is-inverted" %>
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
   </div>
-
-  <nav id='navi'>
-    <ul class='navi-lists'>
-      <li></li>
-      <li><%= link_to '評価ランキング', reviews_path, class: "ranking-list" %></li>
-      <li><%= link_to '上映作品一覧', movies_path, class: "movie-list" %></li>
-      <li><%= link_to '映画館一覧', theaters_path, class: "theater-list" %></li>
-    </ul>
-  </nav>
-
-  <div class='title-contents'>
-    <h2 class='service-title'>
-      映画即決！
-    </h2>
-    <p class='service-explain'>
-      MovieNow!は今すぐ観にいく映画館を
-    </p>
-    <p class='service-explain'>
-      決めるためのアプリです
-    </p>
-  </div>
-</header>

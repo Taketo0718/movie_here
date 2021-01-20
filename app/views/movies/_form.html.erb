@@ -1,0 +1,23 @@
+<article class="media">
+    <figure class="media-left">
+        <p class="image is-64x64">
+            <img class="is-rounded" src="assets/images/gox64.png">
+        </p>
+    </figure>
+    <%= form_with(model: [movie, comment], url: movie_comments_path(@movie) ) do |f| %>
+        <div class="media-content">
+            <div class="field">
+                <p class="control is-expanded">
+                    <%= f.text_area :content, class: "input", placeholder: "ここにメッセージ内容を入力" %>
+                </p>
+            </div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <%= f.submit "送信", class: "button is-info" %>
+                    </div> 
+                </div>
+            </nav>
+        </div>
+    <% end %>
+</article>

@@ -1,4 +1,3 @@
-<%= render "shared/header" %>
 <h1>詳細ページ</h1>
 <div>
 <%=@movie.title %>
@@ -13,7 +12,7 @@
 <%# end %>
 <div style="position: relative; padding-bottom: 56.25%;">
   <iframe 
-    style="position: absolute; top: 0; left: 0; width: 50%; height: 50%;" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
     src="https://www.youtube.com/embed/<%= @movie.youtube_url %>"
     frameborder="0" 
     allow="autoplay; 
@@ -21,20 +20,9 @@
     allowfullscreen></iframe>
 </div>
 
-<div class="row">
-    <% if user_signed_in? %>
-        <div class="comment-create">
-            <h3 class="text-left">レビューを投稿する</h3>
-            <%= render partial: 'comments/form', locals: { comment: @comment, movie: @movie } %>
-        </div>
-    <% end %>
-    <hr>
-    <ul>
-        <li class="comment-create">
-            <h3 class="text-left title">レビュー</h3>
-        </li>
-        <li id="comments_area">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
-        </li>
-    </ul>
+
+<div class="tabs-page is-show js-tabs-page js-tabs-page_design">
+    <h2 class="title title-comment is-4"><i class="icon ion-ios-chatbubbles"></i>コメント</h2>
+    <%= render partial: 'form', locals: { comment: @comment, movie: @movie } %>
+    <%= render partial: 'comment', collection: @comments %>
 </div>
