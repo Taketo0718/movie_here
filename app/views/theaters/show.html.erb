@@ -1,2 +1,19 @@
-<h1>theater index</h1>
-<%= "#{@theater.name}:#{@theater.longitude}:#{@theater.latitude}" %><br>
+<div class="title">映画館詳細</div>
+<div class="container">
+<table class="table">
+  <tr class="th">
+    <th>映画館名</th>
+    <th>住所</th>
+    <th>電話番号</th>
+    <th>緯度</th>
+    <th>経度</th>
+  </tr>
+  <tr>
+    <td><%= link_to @theater.name, theater_path(@theater) %></td>
+    <td><%= %></td>
+    <td><%= %></td>
+    <td><%= @theater.longitude %></td>
+    <td><%= @theater.latitude %> </td>
+  </tr>
+</table>
+</div>
